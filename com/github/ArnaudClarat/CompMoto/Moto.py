@@ -12,13 +12,10 @@ class Moto :
     notePerso = ""
 
     # Méthodes
-    def __getattribute__(self, item):
-        print("getting `{}`".format(str(item)))
-        return object.__getattribute__(self, item)
+    @property
+    def _prix(self):
+        return self.prix
 
-    def __setattr__(self, key, value):
-        print("setting `{}` to `{}`".format(str(value), str(key)))
-        try:
-            return object.__setattr__(self, key, value)
-        except AttributeError:
-            return False
+    @_prix.setter
+    def _prix(self, v):
+        self.prix = v

@@ -11,4 +11,8 @@ class MotosManager :
     print(cursor) # Test
 
     # Attibuts
-    motos
+    motos = []
+
+    @classmethod
+    def addMoto(cls, moto):
+        motos.append(moto)
